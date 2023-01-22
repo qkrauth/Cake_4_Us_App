@@ -175,18 +175,19 @@ form {
   justify-content: space-around;
 }
 
-.size-containter {
+.size-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 input[type=radio] {
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
 }
 
 label {
   width: 50px;
+  padding: 2.5px;
 }
