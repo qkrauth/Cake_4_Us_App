@@ -191,3 +191,14 @@ label {
   width: 50px;
   padding: 2.5px;
 }
+
+.order-button-container {
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(100, 90, 70);
+  width: 100vw;
+}
+
+.main-page {
+  padding-bottom: 100px;
+}
