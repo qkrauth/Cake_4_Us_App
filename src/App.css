@@ -202,3 +202,41 @@ label {
 .main-page {
   padding-bottom: 100px;
 }
+
+.extras-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 0px;
+}
+
+.extra {
+  width: 200px;
+  display: flex;
+}
+
+.cart-item {
+  width: 95vw;
+  height: 125px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b8aa8f;
+}
+
+.cart-item img {
+  height: 100%;
+}
+
+.cart-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-info ul {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}

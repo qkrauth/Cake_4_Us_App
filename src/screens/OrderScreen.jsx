@@ -1,26 +1,42 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import axios from "axios";
+import GlobalContext from "../store/GlobalContext";
 
 const OrderScreen = () => {
   const [bases, setBases] = useState([]);
   const [extras, setExtras] = useState([]);
   const [size, setSize] = useState("");
   const [userExtras, setUserExtras] = useState([]);
+  const {state, dispatch} = useContext(GlobalContext);
   const baseRef = useRef();
   const notesRef = useRef();
 
-  console.log(userExtras);
+  // console.log(userExtras);
+  console.log(state.cart);
+
   const handleSizeChange = (e) => {
     setSize(e.target.value);
   };
 
   const handleExtras = (e) => {
     if (userExtras.includes(e.target.value)) {
-      let newState = userExtras.filter((x) => x !== e.target.value)
-      setUserExtras(newState)
+      let newState = userExtras.filter((x) => x !== e.target.value);
+      setUserExtras(newState);
     } else {
-      setUserExtras([...userExtras, e.target.value])
+      setUserExtras([...userExtras, e.target.value]);
     }
+  };
+
+  const addToCart = (e) => {
+    e.preventDefault();
+    const cake = {
+      name: "Custom Order",
+      size: size,
+      base: baseRef.current.value,
+      extras: userExtras,
+      notes: notesRef.current.value,
+    };
+    dispatch({type: "ADDTOCART", payload: cake})
   };
 
   const getData = () => {
@@ -45,17 +61,23 @@ const OrderScreen = () => {
 
   const extraOptions = extras.map((add) => {
     return (
-      <>
+      <div className="extra">
         <label htmlFor={add.name}>{add.name}</label>
-        <input type="checkbox" name="extras" id={add.name} value={add.name} onChange={handleExtras} />
-      </>
+        <input
+          type="checkbox"
+          name="extras"
+          id={add.name}
+          value={add.name}
+          onChange={handleExtras}
+        />
+      </div>
     );
   });
 
   return (
     <div className="main-page">
       <h1>Order up!</h1>
-      <form action="">
+      <form onSubmit={addToCart}>
         <h3>Select Size</h3>
         <div className="size-container">
           <label htmlFor="small">small</label>
@@ -98,7 +120,7 @@ const OrderScreen = () => {
           {baseOptions}
         </select>
         <h3>Extras</h3>
-        <div>{extraOptions}</div>
+        <div className="extras-container">{extraOptions}</div>
         <textarea
           rows={6}
           placeholder="Tell us about your order:"
