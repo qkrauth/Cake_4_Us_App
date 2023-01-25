@@ -218,11 +218,13 @@ label {
 
 .cart-item {
   width: 95vw;
-  height: 125px;
+  height: 150px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #b8aa8f;
+  box-sizing: border-box;
 }
 
 .cart-item img {
@@ -239,4 +241,22 @@ label {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
+}
+
+.cart-info ul li {
+  width: 100px;
+  list-style: none;
+  font-size: 13px;
+}
+
+.cart-info h2, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }

@@ -1,6 +1,8 @@
 import React from "react";
+import useCurrency from "../hooks/useCurrency";
 
 const CartCard = ({cake}) => {
+  const price = useCurrency(cake.cost)
   return (
     <div className="cart-item">
       <img
@@ -14,7 +16,7 @@ const CartCard = ({cake}) => {
           {cake.extras.map((x) => <li>{x}</li>)}
         </ul>
       </div>
-      <h4 className="colored-text">$45.99</h4>
+      <h4 className="colored-text">{price}</h4>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const OrderScreen = () => {
   const [extras, setExtras] = useState([]);
   const [size, setSize] = useState("");
   const [userExtras, setUserExtras] = useState([]);
-  const {state, dispatch} = useContext(GlobalContext);
+  const { state, dispatch } = useContext(GlobalContext);
   const baseRef = useRef();
   const notesRef = useRef();
 
@@ -29,14 +29,38 @@ const OrderScreen = () => {
 
   const addToCart = (e) => {
     e.preventDefault();
+    let cost = 0;
+
+    if (size === "Small") {
+      let newTotal = 9.99;
+      newTotal += userExtras.length * 0.5;
+      cost = newTotal;
+    }
+    if (size === "Meduim") {
+      let newTotal = 14.99;
+      newTotal += userExtras.length * 0.5;
+      cost = newTotal;
+    }
+    if (size === "Large") {
+      let newTotal = 19.99;
+      newTotal += userExtras.length * 0.5;
+      cost = newTotal;
+    }
+    if (size === "X-Large") {
+      let newTotal = 22.99;
+      newTotal += userExtras.length * 0.5;
+      cost = newTotal;
+    }
+
     const cake = {
       name: "Custom Order",
       size: size,
       base: baseRef.current.value,
       extras: userExtras,
       notes: notesRef.current.value,
+      cost: cost
     };
-    dispatch({type: "ADDTOCART", payload: cake})
+    dispatch({ type: "ADDTOCART", payload: cake });
   };
 
   const getData = () => {

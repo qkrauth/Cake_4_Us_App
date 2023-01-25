@@ -30,7 +30,7 @@ let extras = [
         name: "Chocolate Icing"
     },
     {
-        name: "Creame Cheese Icing"
+        name: "Cream Cheese Icing"
     },
     {
         name: "Strawberry Icing"
