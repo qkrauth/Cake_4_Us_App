@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import GlobalContext from "../store/GlobalContext";
 import CartCard from "../components/CartCard";
 import useCurrency from "../hooks/useCurrency";
+import {Link} from "react-router-dom";
 
 const CartScreen = () => {
     const {state, dispatch} = useContext(GlobalContext);
@@ -24,7 +25,7 @@ const CartScreen = () => {
                 {cartDisplay}
             </div>
             <div className="order-button-container">
-                <button>Check Out</button>
+                <Link to="/thankyou"><button>Check Out</button></Link>
             </div>
         </div>
     )

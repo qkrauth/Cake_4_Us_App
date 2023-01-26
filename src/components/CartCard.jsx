@@ -16,7 +16,7 @@ const CartCard = ({cake}) => {
           {cake.extras.map((x) => <li>{x}</li>)}
         </ul>
       </div>
-      <h4 className="colored-text">{price}</h4>
+      <h4 className="card-total">{price}</h4>
     </div>
   );
 };

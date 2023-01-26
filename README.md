@@ -10,3 +10,4 @@ Users can checkout their order and see a receipt of their items purchased
 
 Ideas:
 Add tax to the receipt screen
+Develop a random delivery time generator (maybe)

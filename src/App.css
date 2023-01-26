@@ -201,6 +201,7 @@ label {
 
 .main-page {
   padding-bottom: 100px;
+  width: 100vw;
 }
 
 .extras-container {
@@ -218,7 +219,7 @@ label {
 
 .cart-item {
   width: 95vw;
-  height: 150px;
+  height: 175px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -244,7 +245,7 @@ label {
 }
 
 .cart-info ul li {
-  width: 100px;
+  width: 150px;
   list-style: none;
   font-size: 13px;
 }
@@ -259,4 +260,37 @@ label {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.card-total {
+  color: rgb(100, 90, 70);
+}
+
+.receipt-item {
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px dashed white;
+}
+
+.receipt-item div {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.final-screen {
+  color: rgb(100, 90, 70);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+header p {
+  font-size: 25px;
+  font-weight: bold;
 }
