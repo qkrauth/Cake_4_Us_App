@@ -294,3 +294,35 @@ header p {
   font-size: 25px;
   font-weight: bold;
 }
+
+.reviews {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.review-card {
+  background-color: rgb(100, 90, 70);
+  height: 450px;
+  width: 350px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 5px solid black;
+}
+
+img {
+  height: 200px;
+  border: 5px solid white;
+}
+
+.rating {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 50px;
+}
+
